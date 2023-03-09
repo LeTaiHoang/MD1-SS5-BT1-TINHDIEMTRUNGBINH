@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính điểm trung bình</title>
+</head>
+<body>
+<label>Nhập điểm môn vật lý</label>
+<input type="number" id="vatly">
+<label>Nhập điểm môn hoá học</label>
+<input type="number" id="hoahoc">
+<label>Nhập điểm môn toán học</label>
+<input type="number" id="toanhoc">
+<button onclick="tongDienVaAVG()">In ra tông điểm và avg</button>
+<h1 style="color: deeppink" id="tongdiem">  </h1>
+<h1 style="color: yellowgreen" id="avg">  </h1>
+
+
+
+
+<script>
+    CÁCH 1 SỬ DỤNG JS THUẦN
+    let vatly = +prompt('Nhập điểm môn vật lý');
+    console.log('Điểm vật lý',vatly);
+    let hoahoc = +prompt('Nhập điểm môn hoá học');
+    console.log('Điểm hoá học',hoahoc);
+    let toanhoc = +prompt('Nhập điểm môn toán');
+    console.log('Điểm toán',toanhoc);
+    let sum = (vatly+hoahoc+toanhoc);
+    let avg = sum/3;
+    alert('Tổng điểm các môn là: '+sum);
+    alert('Điểm trung bình là: '+ avg)
+
+
+    CÁCH 2 SỬ DỤNG "DOM"
+    function tongDienVaAVG() {
+        let vatly = +document.getElementById('vatly').value;
+        let hoahoc = +document.getElementById('hoahoc').value;
+        let toanhoc = +document.getElementById('toanhoc').value;
+        let sum = vatly+hoahoc+toanhoc;
+        console.log('Tổng điểm là: ',sum);
+        let avg = sum/3;
+        console.log('Điểm trung bình các môn là: ',avg);
+         document.getElementById('tongdiem').innerHTML = 'Tổng điểm là: ' + sum;
+         document.getElementById('avg').innerHTML = 'Điểm trung bình các môn là: ' + avg;
+    }
+
+
+
+
+</script>
+</body>
+</html>
